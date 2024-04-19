@@ -30,28 +30,7 @@ public class AnimalRepository : IAnimalRepository
         }
         return animals;
     }
-    // public IEnumerable<Animal> GetAnimals(string param)
-    // {
-    //     using var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-    //     connection.Open();
-    //     var command = connection.CreateCommand();
-    //     command.CommandText = "SELECT * FROM Animals order by @param";
-    //     command.Parameters.AddWithValue("@param", param);
-    //     using var reader = command.ExecuteReader();
-    //     var animals = new List<Animal>();
-    //     while (reader.Read())
-    //     {
-    //         animals.Add(new Animal
-    //         {
-    //             IdAnimal = reader.GetInt32(reader.GetOrdinal("IdAnimal")),
-    //             Name = reader.GetString(reader.GetOrdinal("Name")),
-    //             Description = reader.GetString(reader.GetOrdinal("Description")),
-    //             Category = reader.GetString(reader.GetOrdinal("Category")),
-    //             Area = reader.GetString(reader.GetOrdinal("Area"))
-    //         });
-    //     }
-    //     return animals;
-    // }
+
     public IEnumerable<Animal> GetAnimals(string param)
     {
         var validColumns = new List<string> { "IdAnimal", "Name", "Description", "Category", "Area" };
